@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WISUDA XXIV 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700;800&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/overlay.css?v=20260924_dot">
+</head>
+<body class="overlay-body">
+
+  <!-- Netflix-Style Minimalist Corner Event Bug with Blinking Red Dot -->
+  <div class="corner-event-bug netflix-bug">
+    <div class="netflix-bug-pill">
+      <span class="netflix-live-dot"></span>
+      <div class="netflix-bug-divider"></div>
+      <div class="netflix-bug-text">
+        <span class="netflix-bug-title">WISUDA XXIV</span>
+        <span class="netflix-bug-sub">STIMI YAPMI MAKASSAR</span>
+      </div>
+      <div class="netflix-bug-sheen"></div>
+    </div>
+  </div>
+
+  <!-- Top-Right Official Logos Cluster (STIMI YAPMI, LLDIKTI IX, DIKTI SAINTEK) -->
+  <div class="corner-logos-pill top-right-logos">
+    <div class="logos-pill-track">
+      <img src="/logo.svg" alt="Logo STIMI YAPMI" class="top-logo-img logo-stimi" />
+      <div class="logos-divider"></div>
+      <img src="/lldikti9.png" alt="Logo LLDIKTI Wilayah IX" class="top-logo-img logo-lldikti" />
+      <div class="logos-divider"></div>
+      <img src="/dikti-saintek.png" alt="Logo Diktisaintek Berdampak" class="top-logo-img logo-dikti" />
+      <div class="logos-pill-sheen"></div>
+    </div>
+  </div>
+
+  <!-- Broadcast Audio Player -->
+  <audio id="broadcast-audio" preload="auto"></audio>
+
+  <!-- Now Playing Broadcast Widget -->
+  <div id="now-playing-bug" class="now-playing-bug is-hidden">
+    <div class="np-pill">
+      <span class="np-eq-bars">
+        <span class="np-bar np-b1"></span>
+        <span class="np-bar np-b2"></span>
+        <span class="np-bar np-b3"></span>
+      </span>
+      <div class="np-info">
+        <span class="np-label">MEMUTAR AUDIO SIARAN</span>
+        <span class="np-title" id="np-title">INDONESIA RAYA</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay-container" class="position-bottom-left template-efootball is-hidden">
+    
+    <!-- eFootball™ Sports Stadium Template -->
+    <div class="lt-wrapper lt-efootball">
+      <div class="efootball-card">
+        <div class="ef-accent-stripe"></div>
+        <div class="ef-body">
+          <div class="ef-badge-box">
+            <span class="ef-rating" id="ef-rating">102</span>
+            <!-- <span class="ef-div" id="ef-tag">DIV 1</span> -->
+          </div>
+          <div class="ef-info">
+            <div class="ef-header-strip">
+              <!-- <span class="ef-series">eFootball™ CHAMPIONSHIP</span> -->
+              <div class="ef-social-wrapper" id="ef-social-wrapper">
+                <span class="ef-social-icon" id="ef-social-icon"></span>
+                <span class="ef-social" id="ef-social">@player</span>
+              </div>
+            </div>
+            <div class="ef-title" id="ef-title">Muh Teguh Adhi Putra</div>
+            <div class="ef-sub-bar">
+              <span class="ef-subtitle" id="ef-subtitle">Ahli IT</span>
+            </div>
+          </div>
+          <div class="ef-crest">
+            <img src="/logo.svg" alt="STIMI YAPMI Logo" class="ef-crest-logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Broadcast Running Text (News / Info Ticker Bar) -->
+  <div id="broadcast-ticker" class="broadcast-ticker">
+    <div class="ticker-badge">
+      <span class="ticker-live-pulse"></span>
+      <span class="ticker-badge-text" id="ticker-badge-label">INFO WISUDA</span>
+      <div class="ticker-badge-sheen"></div>
+    </div>
+    <div class="ticker-track-wrapper">
+      <div class="ticker-track" id="ticker-track">
+        <div class="ticker-content" id="ticker-content-1"></div>
+        <div class="ticker-content" id="ticker-content-2" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="ticker-top-glow"></div>
+  </div>
+
+  <!-- Fullscreen Broadcast Stinger Transition -->
+  <div id="fullscreen-transition" class="fullscreen-transition is-hidden">
+    <div class="stinger-backdrop"></div>
+    <div class="stinger-panel stinger-layer-bg"></div>
+    <div class="stinger-panel stinger-layer-navy"></div>
+    <div class="stinger-panel stinger-layer-blue"></div>
+    <div class="stinger-panel stinger-layer-volt"></div>
+    <div class="stinger-accent-slash"></div>
+
+    <div class="stinger-stage">
+      <div class="stinger-top-badge">
+        <span class="stinger-live-dot"></span>
+        <span class="stinger-badge-text">OFFICIAL BROADCAST EVENT</span>
+      </div>
+
+      <div class="stinger-center-card">
+        <div class="stinger-logo-wrapper">
+          <img src="/logo.svg" alt="STIMI YAPMI Logo" class="stinger-logo" />
+          <div class="stinger-logo-halo"></div>
+        </div>
+
+        <div class="stinger-info-group">
+          <div class="stinger-tag-pill">WISUDA SARJANA XXIV</div>
+          <h1 class="stinger-brand-title">STIMI YAPMI MAKASSAR</h1>
+          <p class="stinger-brand-sub">SEKOLAH TINGGI ILMU MANAJEMEN INDONESIA</p>
+        </div>
+      </div>
+
+      <div class="stinger-speed-lines">
+        <span class="stinger-bar bar-1"></span>
+        <span class="stinger-bar bar-2"></span>
+        <span class="stinger-bar bar-3"></span>
+        <span class="stinger-bar bar-4"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="/overlay.js?v=20260928_ticker"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+services:
+  lower-third:
+    build: .
+    container_name: lower-third-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      # Mount file rundown.xlsx agar perubahan pada Excel di host langsung tersinkronisasi
+      - ./rundown.xlsx:/app/rundown.xlsx
+      # Mount direktori uploads & public/audio untuk persistensi file yang diunggah
+      - ./uploads:/app/uploads
+      - ./public/audio:/app/public/audio

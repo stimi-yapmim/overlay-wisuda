@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>WISUDA XXIV 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700;800&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/control.css?v=20260928_ticker">
+</head>
+<body class="mobile-app-body">
+  
+  <!-- App Header (Sticky) -->
+  <header class="app-header">
+    <div class="header-branding">
+      <div class="ef-logo-pill event-brand-pill">
+        <span class="netflix-live-dot"></span>
+        <div class="ef-text">
+          <span class="brand-title">Wisuda XXIV</span>
+          <span class="brand-subtitle">STIMI YAPMI MAKASSAR</span>
+        </div>
+        <div class="brand-pill-sheen"></div>
+      </div>
+    </div>
+
+    <div class="header-status">
+      <div class="air-badge is-off" id="app-air-badge">
+        <span class="air-dot"></span>
+        <span id="air-text">STANDBY</span>
+      </div>
+      <button class="btn-icon-head" id="btn-copy-obs" title="Salin URL OBS">
+        📋
+      </button>
+    </div>
+  </header>
+
+  <!-- Network & OBS Connection Banner -->
+  <div class="connection-bar">
+    <div class="conn-item">
+      <span class="status-indicator disconnected" id="conn-dot"></span>
+      <span id="conn-text">Menghubungkan...</span>
+    </div>
+    <div class="conn-item" id="obs-status-item">
+      <span>🎥 OBS:</span>
+      <strong id="obs-count-text">0 Terhubung</strong>
+    </div>
+  </div>
+
+  <!-- Main Scrollable Content -->
+  <main class="mobile-main">
+
+    <!-- 1. Live Stadium Monitor Preview -->
+    <section class="preview-section">
+      <div class="preview-header-bar">
+        <div class="sec-label">
+          <span class="label-icon">📺</span>
+          <span>LIVE PREVIEW STREAM</span>
+        </div>
+        <span class="resolution-tag">1920×1080 (OBS)</span>
+      </div>
+
+      <div class="monitor-wrapper">
+        <div class="monitor-screen bg-stadium-view" id="monitor-screen">
+          
+          <!-- Scaled Top-Right Logos inside monitor -->
+          <div class="prev-top-logos">
+            <img src="/logo.svg" alt="STIMI YAPMI" class="prev-logo-item prev-logo-stimi" />
+            <div class="prev-logo-divider"></div>
+            <img src="/lldikti9.png" alt="LLDIKTI IX" class="prev-logo-item prev-logo-lldikti" />
+            <div class="prev-logo-divider"></div>
+            <img src="/dikti-saintek.png" alt="DIKTI SAINTEK" class="prev-logo-item prev-logo-dikti" />
+          </div>
+
+          <!-- Scaled eFootball Overlay inside monitor -->
+          <div id="preview-overlay-container" class="position-bottom-left template-efootball is-hidden">
+            <div class="lt-wrapper lt-efootball">
+              <div class="efootball-card">
+                <div class="ef-accent-stripe"></div>
+                <div class="ef-body">
+                  <div class="ef-badge-box">
+                    <span class="ef-rating" id="prev-rating">102</span>
+                    <span class="ef-div" id="prev-tag">DIV 1</span>
+                  </div>
+                  <div class="ef-info">
+                    <div class="ef-header-strip">
+                      <span class="ef-series">eFootball™ CHAMPIONSHIP</span>
+                      <div class="ef-social-wrapper" id="prev-social-wrapper">
+                        <span class="ef-social-icon" id="prev-social-icon"></span>
+                        <span class="ef-social" id="prev-social">@player</span>
+                      </div>
+                    </div>
+                    <div class="ef-title" id="prev-title">MUHAMMAD RIZKY</div>
+                    <div class="ef-sub-bar">
+                      <span class="ef-subtitle" id="prev-subtitle">TIMNAS INDONESIA ESPORTS • TOP 10 GLOBAL</span>
+                    </div>
+                  </div>
+                  <div class="ef-crest">
+                    <span class="ef-ball-icon">⚽</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preview Fullscreen Transition inside monitor -->
+          <div id="preview-fullscreen-transition" class="fullscreen-transition is-hidden">
+            <div class="stinger-backdrop"></div>
+            <div class="stinger-panel stinger-layer-bg"></div>
+            <div class="stinger-panel stinger-layer-navy"></div>
+            <div class="stinger-panel stinger-layer-blue"></div>
+            <div class="stinger-panel stinger-layer-volt"></div>
+            <div class="stinger-accent-slash"></div>
+
+            <div class="stinger-stage">
+              <div class="stinger-top-badge">
+                <span class="stinger-live-dot"></span>
+                <span class="stinger-badge-text">OFFICIAL BROADCAST</span>
+              </div>
+
+              <div class="stinger-center-card">
+                <div class="stinger-logo-wrapper">
+                  <img src="/logo.svg" alt="STIMI YAPMI Logo" class="stinger-logo" />
+                  <div class="stinger-logo-halo"></div>
+                </div>
+
+                <div class="stinger-info-group">
+                  <div class="stinger-tag-pill">WISUDA SARJANA XXIV</div>
+                  <h1 class="stinger-brand-title">STIMI YAPMI MAKASSAR</h1>
+                  <p class="stinger-brand-sub">SEKOLAH TINGGI ILMU MANAJEMEN INDONESIA</p>
+                </div>
+              </div>
+
+              <div class="stinger-speed-lines">
+                <span class="stinger-bar bar-1"></span>
+                <span class="stinger-bar bar-2"></span>
+                <span class="stinger-bar bar-3"></span>
+                <span class="stinger-bar bar-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scaled Running Text / Ticker Preview inside monitor -->
+          <div id="prev-broadcast-ticker" class="prev-broadcast-ticker">
+            <div class="prev-ticker-badge">
+              <span class="prev-ticker-dot"></span>
+              <span id="prev-ticker-badge-text">INFO WISUDA</span>
+            </div>
+            <div class="prev-ticker-track-wrapper">
+              <div class="prev-ticker-track" id="prev-ticker-track">
+                <span class="prev-ticker-content" id="prev-ticker-content-1"></span>
+                <span class="prev-ticker-content" id="prev-ticker-content-2" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Currently Loaded Cue Card (Active Item Detail) -->
+    <section class="active-cue-card">
+      <div class="cue-card-top">
+        <span class="cue-indicator-label">DATA SIARAN TERPILIH</span>
+        <button class="btn-edit-active" id="btn-toggle-editor" type="button">
+          ✏️ Edit Teks Ini
+        </button>
+      </div>
+
+      <div class="cue-content-preview">
+        <div class="cue-tag-badge" id="card-active-tag">DIV 1</div>
+        <div class="cue-title" id="card-active-title">MUHAMMAD RIZKY</div>
+        <div class="cue-subtitle" id="card-active-subtitle">TIMNAS INDONESIA ESPORTS • TOP 10 GLOBAL</div>
+        <div class="cue-social-tag" id="card-active-social">
+          <span id="card-active-social-icon"></span>
+          <span id="card-active-social-handle">@RizkyEF</span>
+        </div>
+      </div>
+
+      <!-- Expandable Inline Editor Form -->
+      <div class="inline-editor-form is-collapsed" id="inline-editor">
+        <div class="form-title">Edit Langsung Data Tayang:</div>
+        <div class="input-row">
+          <label>Nama Pemain / Judul Match</label>
+          <input type="text" id="edit-title" placeholder="Contoh: MUHAMMAD RIZKY">
+        </div>
+        <div class="input-row">
+          <label>Tim / Subtitle / Detail</label>
+          <input type="text" id="edit-subtitle" placeholder="Contoh: Timnas Indonesia Esports">
+        </div>
+        <div class="input-grid-2">
+          <div class="input-row">
+            <label>Tag / Divisi / OVR</label>
+            <input type="text" id="edit-tag" placeholder="DIV 1 / 102 OVR">
+          </div>
+          <div class="input-row">
+            <label>Platform Sosmed</label>
+            <select id="edit-platform">
+              <option value="youtube">YouTube</option>
+              <option value="twitter">X / Twitter</option>
+              <option value="instagram">Instagram</option>
+              <option value="tiktok">TikTok</option>
+              <option value="twitch">Twitch</option>
+              <option value="discord">Discord</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-row">
+          <label>Username / Handle</label>
+          <input type="text" id="edit-social" placeholder="@username">
+        </div>
+        <button type="button" class="btn-push-changes" id="btn-save-edit">
+          ⚡ Terapkan Perubahan (Update Live)
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. Running Text (Ticker Siaran Bawah) -->
+    <section class="ticker-control-card">
+      <div class="ticker-card-top">
+        <div class="ticker-card-title">
+          <span class="ticker-card-icon">📢</span>
+          <span class="ticker-card-heading">RUNNING TEXT SIARAN (TICKER)</span>
+        </div>
+        <button type="button" class="btn-ticker-toggle-power is-on" id="btn-ticker-toggle" title="Nyalakan / Sembunyikan Running Text di OBS">
+          <span class="ticker-power-dot" id="ticker-power-dot"></span>
+          <span id="ticker-toggle-text">TICKER ON</span>
+        </button>
+      </div>
+
+      <div class="ticker-card-body">
+        <div class="input-grid-2">
+          <div class="input-row">
+            <label>Badge / Label Ticker</label>
+            <input type="text" id="ctrl-ticker-label" placeholder="Contoh: INFO WISUDA" value="INFO WISUDA">
+          </div>
+          <div class="input-row">
+            <label>Kecepatan Gulir</label>
+            <select id="ctrl-ticker-speed">
+              <option value="45">Lambat (45s)</option>
+              <option value="30" selected>Normal / Standar (30s)</option>
+              <option value="18">Cepat (18s)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <label>Teks Berjalan (Gunakan pemisah • atau * atau | )</label>
+          <textarea id="ctrl-ticker-text" rows="2" placeholder="Masukkan teks pengumuman running text..."></textarea>
+        </div>
+
+        <div class="ticker-action-buttons">
+          <button type="button" class="btn-ticker-apply" id="btn-apply-ticker">
+            ⚡ Terapkan & Update Running Text (Live)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Rundown Siaran eFootball (Broadcast Queue) -->
+    <section class="rundown-section">
+      <div class="rundown-header">
+        <div class="sec-label">
+          <span class="label-icon">📋</span>
+          <span>RUNDOWN SIARAN eFOOTBALL</span>
+        </div>
+        <button class="btn-add-cue" id="btn-open-add-modal" type="button">
+          + Tambah Cue
+        </button>
+      </div>
+
+      <!-- Excel Rundown Toolbar -->
+      <div class="excel-toolbar">
+        <div class="excel-status-chip">
+          <span class="excel-icon">📊</span>
+          <span>Sumber: <strong>rundown.xlsx</strong></span>
+        </div>
+        <div class="excel-btn-group">
+          <button type="button" class="btn-excel-tool" id="btn-reload-excel" title="Muat Ulang dari File Excel">
+            🔄 Reload
+          </button>
+          <button type="button" class="btn-excel-tool" id="btn-upload-excel" title="Upload File Excel Baru dari HP/PC">
+            📤 Upload
+          </button>
+          <a href="/rundown.xlsx" class="btn-excel-tool" download title="Download Template Excel">
+            ⬇️ Download
+          </a>
+          <button type="button" class="btn-excel-tool" id="btn-open-audio-modal" title="Upload & Kelola File MP3 Musik Wisuda">
+            🎵 Lagu MP3
+          </button>
+          <input type="file" id="excel-file-input" accept=".xlsx, .xls" style="display: none;">
+        </div>
+      </div>
+
+      <!-- Rundown Cards List -->
+      <div class="rundown-list" id="rundown-container">
+        <!-- Generated by control.js -->
+      </div>
+    </section>
+
+    <!-- OBS Browser Source Quick Copy Card (Collapsible) -->
+    <section class="obs-info-box">
+      <div class="obs-info-header">
+        <span>🔗 Link Browser Source OBS Studio:</span>
+      </div>
+      <div class="copy-url-row">
+        <input type="text" id="obs-source-url-input" readonly value="http://localhost:3000/overlay">
+        <button type="button" class="btn-copy-action" id="btn-copy-obs-2">Salin</button>
+      </div>
+      <div class="obs-hint">Atur Resolusi di OBS: <strong>1920 × 1080</strong></div>
+    </section>
+
+  </main>
+
+  <!-- Sticky Bottom Thumb Action Bar (2 Baris: Siaran & Musik) -->
+  <footer class="mobile-action-bar">
+    <div class="action-bar-container">
+      <!-- Baris 1: Kontrol Siaran OBS & Transisi -->
+      <div class="action-bar-row bar-row-broadcast">
+        <button type="button" class="btn-action-main btn-show-live" id="btn-action-show" title="Tampilkan Lower Third ke OBS">
+          <span class="action-icon">🔴</span>
+          <span class="action-btn-label">LIVE</span>
+        </button>
+
+        <button type="button" class="btn-action-main btn-hide-live" id="btn-action-hide" title="Sembunyikan Lower Third">
+          <span class="action-icon">⬛</span>
+          <span class="action-btn-label">OFF</span>
+        </button>
+
+        <button type="button" class="btn-action-transition" id="btn-action-transition" title="Animasi Transisi Layar Penuh (Stinger Wipe)">
+          <span class="action-icon transition-icon">⚡</span>
+          <span class="action-btn-label" id="btn-transition-text">TRANSISI</span>
+        </button>
+
+        <button type="button" class="btn-action-next" id="btn-action-next" title="Pindah ke Rundown Berikutnya & Tayangkan">
+          <span class="next-icon">⏭️</span>
+          <span class="action-btn-label">NEXT CUE</span>
+        </button>
+      </div>
+
+      <!-- Baris 2: Pemutar Musik Wisuda (Audio Stream OBS) -->
+      <div class="action-bar-row bar-row-audio">
+        <button type="button" class="btn-action-audio" id="btn-audio-indonesia" data-song="indonesia_raya" data-title="Indonesia Raya" title="Putar Lagu Kebangsaan Indonesia Raya">
+          <span class="audio-icon">🇮🇩</span>
+          <span class="action-btn-label">INDONESIA</span>
+        </button>
+
+        <button type="button" class="btn-action-audio" id="btn-audio-gaudeamus" data-song="gaudeamus_igitur" data-title="Gaudeamus Igitur" title="Putar Hymne Gaudeamus Igitur">
+          <span class="audio-icon">🎓</span>
+          <span class="action-btn-label">GAUDEAMUS</span>
+        </button>
+
+        <button type="button" class="btn-action-audio" id="btn-audio-mars" data-song="mars_stimi" data-title="Mars STIMI" title="Putar Lagu Mars STIMI Yapmi Makassar">
+          <span class="audio-icon">🏫</span>
+          <span class="action-btn-label">MARS STIMI</span>
+        </button>
+
+        <button type="button" class="btn-action-audio" id="btn-audio-pasti" data-song="pasti_bisa" data-title="Pasti Bisa" title="Putar Lagu Pasti Bisa">
+          <span class="audio-icon">⚡</span>
+          <span class="action-btn-label">PASTI BISA</span>
+        </button>
+
+        <button type="button" class="btn-action-audio" id="btn-audio-bagimu" data-song="bagimu_negeri" data-title="Bagimu Negeri" title="Putar Lagu Nasional Bagimu Negeri">
+          <span class="audio-icon">🏛️</span>
+          <span class="action-btn-label">BAGIMU NEGERI</span>
+        </button>
+
+        <button type="button" class="btn-action-audio" id="btn-audio-bebas" data-song="lagu_bebas" data-title="Lagu Bebas" title="Putar Lagu Bebas / Instrumen Pilihan">
+          <span class="audio-icon">🎶</span>
+          <span class="action-btn-label">BEBAS</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Tambah Rundown Cue -->
+  <div class="modal-backdrop is-hidden" id="add-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>+ Tambah Item Rundown</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-add-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="input-row">
+          <label>Judul Cue / Nama Pemain</label>
+          <input type="text" id="modal-input-title" placeholder="Contoh: MATCH 2: FINAL">
+        </div>
+        <div class="input-row">
+          <label>Subtitle / Tim / Informasi</label>
+          <input type="text" id="modal-input-subtitle" placeholder="Contoh: Grand Final eFootball Championship">
+        </div>
+        <div class="input-grid-2">
+          <div class="input-row">
+            <label>Tag / Rating (DIV 1, 102, dll)</label>
+            <input type="text" id="modal-input-tag" placeholder="DIV 1">
+          </div>
+          <div class="input-row">
+            <label>Platform</label>
+            <select id="modal-input-platform">
+              <option value="youtube">YouTube</option>
+              <option value="twitch">Twitch</option>
+              <option value="twitter">X / Twitter</option>
+              <option value="tiktok">TikTok</option>
+              <option value="instagram">Instagram</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-row">
+          <label>Username / Handle Sosmed</label>
+          <input type="text" id="modal-input-social" placeholder="@eFootballID">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-cancel" id="btn-cancel-modal">Batal</button>
+        <button type="button" class="btn-modal-submit" id="btn-submit-add-cue">+ Simpan ke Rundown</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Kelola File Audio MP3 -->
+  <div class="modal-backdrop is-hidden" id="audio-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🎵 Kelola File MP3 Musik Wisuda</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-audio-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 14px; line-height: 1.5;">
+          Unggah file MP3 untuk diputar langsung saat tombol di bottom bar diklik. Jika belum diunggah, melodi bawaan akan otomatis dimainkan.
+        </p>
+
+        <div class="audio-upload-list">
+          <div class="audio-upload-item">
+            <div class="audio-upload-label">
+              <span class="audio-song-name">🇮🇩 Indonesia Raya</span>
+              <small class="audio-file-status" id="status-indonesia_raya">File: /audio/indonesia_raya.mpeg</small>
+            </div>
+            <button type="button" class="btn-audio-upload-pick" data-song="indonesia_raya">📁 Ganti File</button>
+          </div>
+
+          <div class="audio-upload-item">
+            <div class="audio-upload-label">
+              <span class="audio-song-name">🎓 Gaudeamus Igitur</span>
+              <small class="audio-file-status" id="status-gaudeamus_igitur">File: /audio/gaudeamus_igitur.aac</small>
+            </div>
+            <button type="button" class="btn-audio-upload-pick" data-song="gaudeamus_igitur">📁 Ganti File</button>
+          </div>
+
+          <div class="audio-upload-item">
+            <div class="audio-upload-label">
+              <span class="audio-song-name">🏫 Mars STIMI</span>
+              <small class="audio-file-status" id="status-mars_stimi">File: /audio/mars_stimi.mpeg</small>
+            </div>
+            <button type="button" class="btn-audio-upload-pick" data-song="mars_stimi">📁 Ganti File</button>
+          </div>
+
+          <div class="audio-upload-item">
+            <div class="audio-upload-label">
+              <span class="audio-song-name">⚡ Pasti Bisa</span>
+              <small class="audio-file-status" id="status-pasti_bisa">File: /audio/pasti_bisa.mpeg</small>
+            </div>
+            <button type="button" class="btn-audio-upload-pick" data-song="pasti_bisa">📁 Ganti File</button>
+          </div>
+
+          <div class="audio-upload-item">
+            <div class="audio-upload-label">
+              <span class="audio-song-name">🏛️ Bagimu Negeri</span>
+              <small class="audio-file-status" id="status-bagimu_negeri">File: /audio/bagimu_negeri.mp3</small>
+            </div>
+            <button type="button" class="btn-audio-upload-pick" data-song="bagimu_negeri">📁 Ganti File</button>
+          </div>
+
+          <div class="audio-upload-item">
+            <div class="audio-upload-label">
+              <span class="audio-song-name">🎶 Lagu Bebas</span>
+              <small class="audio-file-status" id="status-lagu_bebas">File: /audio/lagu_bebas.mp3</small>
+            </div>
+            <button type="button" class="btn-audio-upload-pick" data-song="lagu_bebas">📁 Upload Audio</button>
+          </div>
+        </div>
+
+        <input type="file" id="audio-file-input" accept="audio/*,.mp3,.mpeg,.aac,.wav,.ogg,.m4a" style="display: none;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-cancel" id="btn-cancel-audio-modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="mobile-toast" id="toast">Berhasil diupdate!</div>
+
+  <script src="/control.js?v=20260928_ticker"></script>
+</body>
+</html>
